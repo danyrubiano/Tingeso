@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>VUE</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="keywords"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- bootstrap-css -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<!--// bootstrap-css -->
+<!-- css -->
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" property="" />
+<!--// css -->
+<!-- font-awesome icons -->
+<link rel="stylesheet" href="css/font-awesome.min.css" />
+<!-- //font-awesome icons -->
+<!-- font -->
+<link href="//fonts.googleapis.com/css?family=Josefin+Sans:100,100i,300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+<link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>
+<!-- //font -->
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script src="js/main.js"></script>
+<script type="text/javascript" src="//maps.googleapis.com/maps/api/js"></script>
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<![endif]-->
+</head>
+<body ng-app="angularSpa" ng-controller= "UsuariosCtrl">
+    <!-- banner -->
+    <!--div class="banner-1 jarallax"-->
+        <div class="agileinfo-dot-1">
+            <div class="w3ls-banner-info-bottom">
+                <div class="container">
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+            <div class="header">
+                <div class="container">
+                    <nav class="navbar navbar-default">
+                <div class="navbar-header navbar-left">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <h1><a class="navbar-brand" href="#/home">VEU</a></h1>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                    <nav class="cl-effect-13" id="cl-effect-13">
+                        <ul class="nav navbar-nav">
+                            <li ng-show="!VisibilidadIngreso">
+                      <input type="text"  ng-model="userMail" placeholder="Mail de Usuario">
+                    <input type="password" ng-model= "password"  placeholder="Contraseña">
+
+                    </li>
+                    <li ng-show="!VisibilidadIngreso"> 
+                      <button ng-click="loginUsuario()" class="btn btn-default"> Ingresar </button> </li>
+                            <li><a href='#home'>Home</a></li>
+                            <li ng-show="VisibilidadIngreso" > <a  href="#/perfil">Mi Perfil</a></li>
+                            <li ng-show="VisibilidadIngreso"><a  href="#/publicar">Publicar</a></li>
+                            <li ng-show="VisibilidadIngreso"><a  href="#/MisPublicaciones">Mis publicaciones</a></li>
+                            <li ng-show="VisibilidadIngreso"><a  href="#/mensajesRecibidos">Mensajes Recibidos</a></li>
+                            <li ng-show="VisibilidadIngreso"><a  href="#/publicaciones">Últimas publicaciones</a></li>
+                            <li ng-show="!VisibilidadIngreso"><a href="#acerca_de">Acerca de</a></li>
+                            <li ng-show="!VisibilidadIngreso"><a href="#contacto">Contacto</a></li>
+                            <li ng-show="VisibilidadIngreso"><a  href='#home' ng-click="logoutUsuario()">Salir</a></li>
+
+                           <!-- <li ng-show="!VisibilidadIngreso"><a href="#/login">Iniciar Sesión</a></li> -->
+
+                            <li ng-show="!VisibilidadIngreso"><a href="#/registro">Registrate</a></li>
+                        </ul>
+                        <div class="clearfix"> </div>
+                    </nav>
+                </div>
+            </nav>  
+                </div>
+            </div>
+        </div>
+    <!--/div-->
+    <div>
+        <div ng-view=""></div>
+    </div>
+    <!-- //banner -->
+
+        <!-- footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="agile_footer_copy">
+                <div class="w3agile_footer_grids">
+                    
+                    <div class="col-md-4 w3agile_footer_grid">
+                        <h3>Información de Contacto</h3>
+                        <ul>
+                            <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Av. Libertador Bernardo O'Higgins nº 3363. <span>Estación Central. Santiago de Chile.</span>
+                            <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:info@example.com">info@example.com</a></li>
+                            <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>Mesa central (562) 2 718 00 00 </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="col-md-4 w3agile_footer_grid">
+                        <h3>Nosotros</h3>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse.<span>Excepteur sint occaecat cupidatat 
+                            non proident, sunt in culpa qui officia deserunt mollit.</span></p>
+                    </div>
+                    
+                    <div class="col-md-4 w3agile_footer_grid w3agile_footer_grid1">
+                        <h3>Navegación</h3>
+                        <ul>
+                            <li><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span><a href="services.html">Services</a></li>
+                            <li><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span><a href="projects.html">Projects</a></li>
+                            <li><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span><a href="icons.html">Web Icons</a></li>
+                            <li><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+<!-- //footer -->
+<!-- copy-right -->
+    <div class="w3_agileits_copy_right_social">
+        <div class="container">
+            <div class="col-md-6 agileits_w3layouts_copy_right">
+                <p><a href="http://usach.cl/">Universidad de Santiago de Chile</a> 2017 ©. All rights reserved</p>
+            </div>
+                <div class="clearfix"> </div>
+        </div>
+    </div>
+
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+<script src="bower_components/angular-base64-upload/dist/angular-base64-upload.js"></script>
+  <!-- Recursos personales-->
+  <!-- build:js js/scripts.js -->   
+  <!-- inject:js -->
+  <script src="scripts/app.js"></script>
+  <script src="scripts/mensajesSrv.js"></script>
+  <script src="scripts/publicacionesSrv.js"></script>
+  <script src="scripts/usuariosSrv.js"></script>
+  <script src="scripts/controllers/mainCtrl.js"></script>
+  <script src="scripts/controllers/mensajesCtrl.js"></script>
+  <script src="scripts/controllers/publicacionesCtrl.js"></script>
+  <script src="scripts/controllers/usuariosCtrl.js"></script>
+  <!-- endinject -->
+  <!-- endbuild -->
+
+   <script src="js/jarallax.js"></script>
+    <script src="js/SmoothScroll.min.js"></script>
+    <script type="text/javascript">
+        /* init Jarallax */
+        $('.jarallax').jarallax({
+            speed: 0.5,
+            imgWidth: 1366,
+            imgHeight: 768
+        })
+    </script>
+    <!-- //jarallax -->
+    <script src="js/bootstrap.js"></script>
+
+</body>
+
+</html>

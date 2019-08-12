@@ -1,0 +1,25 @@
+<div ng-app="angularSpa" ng-controller="PublicacionesCtrl">
+    <div class="banner-bottom">
+        <div class="container">
+            <h3 class="wthree_head">Publicar</h3>
+            <div class="agileinfo_mail_grids">
+
+                <span class="input input--chisato">
+                    <input class="input__field input__field--chisato" name="Nombres" type="text" id="nombre" ng-model="nombre" class="form-control" placeholder="Título " required="" />
+                    
+                </span>
+
+                <textarea class="form-control input-lg" rows="3" ng-model= "descripcion" id="comment" required="" placeholder="Publicación"></textarea>
+            </div>
+
+                                <label for="categoriaCrearPublicacion">Categoria: </label>
+                    <select name="" id="" ng-model="categoriaCrearPublicacion" ng-options="categoria.clasificacion for categoria in categorias">
+                        <option value=""> Todas las categorias</option>
+                    </select>
+            <br></br>
+
+
+            <button ng-click="crearPublicacion()" class="btn btn-warning"> Publicar </button>
+        </div>
+    </div>
+</div>

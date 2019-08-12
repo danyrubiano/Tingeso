@@ -1,0 +1,32 @@
+<div ng-app="angularSpa" ng-controller="PublicacionesCtrl">
+    <div class="banner-bottom">
+        <div class="container">
+            <h3 class="wthree_head">Mis Publicaciones</h3>
+            <div ng-repeat="publicacion in misPublicacionesParcial">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Nombre: {{publicacion.nombre}} </h2 >
+                      <h2 class="panel-title">Categoria:  {{publicacion.areas[0].nombre}}</h2 >
+                </div>
+                <div class="panel-body">
+                  <!--div class="col-sm-4" >
+                      <a href="#" class="thumbnail">
+                       
+                        <img  src="{{'data:image/gif;base64,'+publicacion.foto}}" alt="Foto">
+                      </a>
+                  </div-->
+                  <div class="col-sm-8">
+                      <div class="well">
+                          <p style="color:black;">{{publicacion.brief}}</p>
+                      </div>
+
+                      
+                  </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>

@@ -1,0 +1,95 @@
+    <div class="banner-bottom">
+        <div class="container">
+            <h3 class="wthree_head">Registro</h3>
+            <div class="agileinfo_mail_grids">
+                <center>
+                <span class="input input--chisato">
+                    <input class="input__field input__field--chisato" name="Nombres" type="text" id="nombreDeUsuario" ng-model="nombreUsuario" class="form-control" placeholder="Nombres " required="" />
+
+                </span>
+                <span class="input input--chisato">
+                    <input class="input__field input__field--chisato" name="Apellidos" type="text" id="apellidoDeUsuario" ng-model="apellidoUsuario" class="form-control" placeholder="Apellidos " required="" />
+
+                </span>
+                </center>
+                <center>
+                <span class="input input--chisato">
+                    <input class="input__field input__field--chisato" name="Name" type="text" id="runUsuario" ng-model="runUsuario" class="form-control" placeholder="Rut" required="" />
+
+             
+                </span>
+
+                <span class="input input--chisato">
+                    <label for="tipoUsuario">Tipo de usuario: </label>
+                    <select name="" id="" ng-model="tipoUsuario" ng-options="tipo.clasificacion for tipo in tipos">
+                        <option value=""> Seleccione el tipo de usuario</option>
+                    </select>
+                </span>
+                </center>
+
+                <center>
+                <span class="input input--chisato">
+                    <input class="input__field input__field--chisato" name="Mail" type="email" id="mailUsuario" ng-model="mailUsuario" class="form-control" placeholder="Email" required="" />
+
+                  
+                </span>
+                <span class="input input--chisato">
+                    <input class="input__field input__field--chisato" name="Mail" type="email" id="confirmacionEmailUsuario" ng-model="confirmacionEmailUsuario" class="form-control" placeholder="Email " required="" />
+
+                </span>
+                </center>
+
+                <center>
+                <span class="input input--chisato">
+                    <input class="input__field input__field--chisato" name="password" type="password" id="password" ng-model="password" class="form-control" placeholder="password " required="" />
+
+                </span>
+                <span class="input input--chisato">
+                    <input class="input__field input__field--chisato" name="confirmarPassword" type="password" id="confirmarPassword" ng-model="confirmarPassword" class="form-control" placeholder="password" required="" />
+    
+                </span>
+                </center>
+
+                <center>
+
+<div>
+<button>
+<label for="foto-input">
+    Subir foto de perfil
+</label>
+</button>
+                    
+
+                        <input type="file" id= "foto-input" ng-model="myfile" style="display:none;" base-sixty-four-input>
+                    </div>
+
+                    <img  ng-if=myfile src="{{'data:image/gif;base64,'+myfile.base64}}">
+                    </center>
+
+
+
+                <center>
+                    <h3>Terminos y condiciones</h3>
+                    <h4> Reglamento de uso de la plataforma</h4>
+                </center>
+
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <z> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</z>
+                    </div>
+                </div>
+                <div class="checkbox">
+                    <label>
+                    <input type="checkbox" value="" ng-click="MostrarBotonRegistrar()" >Acepto los terminos y condiciones de la página
+                    </label>
+                </div>
+                <br><br>
+                <center ng-show= "VisibilidadBotonRegistrar">
+                    <button ng-click="registroUsuario()" class="btn btn-primary"> Registrate </button>
+                </center>
+                <br><br><br><br>
+            </div>
+        </div>
+</div>
+
+

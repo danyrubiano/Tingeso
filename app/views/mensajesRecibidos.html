@@ -1,0 +1,27 @@
+<div ng-app="angularSpa" ng-controller="MensajesCtrl">
+    <div class="banner-bottom">
+        <div class="container">
+            <h3 class="wthree_head">Mensajes recibidos</h3>
+            <div ng-repeat="mensaje in mensajesRecibidosParcial">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Nombre: {{mensaje.nombreAutor}} {{mensaje.apellidoAutor}}</h2 >
+             
+                </div>
+                <div class="panel-body">
+
+                  <div class="col-sm-8">
+                      <div class="well">
+                          <p style="color:black;">{{mensaje.contenido}}</p>
+                      </div>
+
+                      
+                  </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>

@@ -1,0 +1,95 @@
+<div ng-app="angularSpa" ng-controller="PublicacionesCtrl">
+    <div class="banner-bottom">
+<div class="container">
+    
+    
+
+<button ng-show="!VisibilidadFiltros" ng-click="MostrarFiltros()" class="btn btn-primary">Filtros </button>
+
+    <div class="container" ng-show="VisibilidadFiltros">
+      <h3 class="wthree_head">Filtros</h3>
+                <center>
+                <span class="input input--chisato">
+                    <label for="categoriaEscogida">Categoria: </label>
+                    <select name="" id="" ng-model="categoriaEscogida" ng-options="categoria.clasificacion for categoria in categorias">
+                        <option value=""> Todas las categorias</option>
+                    </select>
+             
+                </span>
+
+                <span class="input input--chisato">
+                    <label for="tipoAutor">Tipo de autor: </label>
+                    <select name="" id="" ng-model="tipoAutor" ng-options="tipo.clasificacion for tipo in tipos">
+                        <option value=""> Todo tipo de autor</option>
+                    </select>
+                </span>
+                </center>
+<center><button  ng-click="getPublicacionesFiltro()"     class="btn btn-primary"> Aplicar Filtros </button>
+<button ng-click="MostrarFiltros()" class="btn btn-primary"> Anular Filtros </button>
+
+</center>
+
+
+    </div>
+
+
+
+    <div class="container">
+        <h3 class="wthree_head">Publicaciones filtradas</h3>
+        <row class="col-sm-4 ">
+            <nav>
+              <ul class="pagination pagination-sm">
+                <li ng-if="inicio > 0">
+                  <a ng-click="page(-10)" aria-label="Previous">
+                    <span aria-hidden="true">&laquo; Anteriores </span>
+                  </a>
+                </li>
+                <li >
+                  <a ng-click="page(10)" aria-label="Next">
+                    <span aria-hidden="true">&raquo; Siguientes</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+        </row>
+    </div>
+
+    <div class="container" >
+        <div ng-repeat="publicacion in publicacionesFiltro">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Nombre: {{publicacion.nombre}}  <!--a href="#/usuarios/{{usuario.idUsuario}}" class="btn btn-primary"> Ver Perfil </a--></h2 >
+                      <h2 class="panel-title">Categoria:  {{publicacion.categoria}}</h2 >
+                      <h2 class="panel-title">Creado por: {{publicacion.nombresUsuario}} {{publicacion.apellidosUsuario}} </h2 >
+                </div>
+                <div class="panel-body">
+                  
+                                  <div class="panel-body">
+                  <div class="col-sm-4" >
+                      <!--a href="#" class="thumbnail">
+                        
+                        <img  src="{{'data:image/gif;base64,'+publicacion.foto}}" alt="Foto">
+                      </a-->
+                  </div>
+                  <div class="col-sm-8">
+                      <div class="well">
+                          <p style="color:black;">{{publicacion.brief}}</p>
+                      </div>
+
+                  </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+</div>
+
+</div>
+</div>
